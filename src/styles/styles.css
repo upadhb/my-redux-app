@@ -24,3 +24,15 @@ nav a {
 nav {
     padding-top: 20px;
 }
+
+table.tableClass {
+    padding: 2px;
+}
+
+table.tableClass tr th {
+    padding: 2px 5px;
+}
+
+table.tableClass tr td {
+    padding: 2px 5px;
+}

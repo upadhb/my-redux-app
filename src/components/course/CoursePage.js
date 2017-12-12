@@ -3,19 +3,24 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as courseActions from '../../actions/courseActions';
+import CourseList from './CourseList';
 
 class CoursePage extends React.Component {
     constructor (props, context) {
         super(props, context);
 
-        this.state = {
-            course: { title: '' }
-        };
+    // for future reference
+        /*
+            this.state = {
+                course: { title: '' }
+            };
 
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onClickSave = this.onClickSave.bind(this);
+            this.onTitleChange = this.onTitleChange.bind(this);
+            this.onClickSave = this.onClickSave.bind(this);*/
     }
-    onTitleChange(event) {
+
+    // for future reference
+   /* onTitleChange(event) {
         const course = this.state.course;
         course.title = event.target.value;
         this.setState({course: course});
@@ -32,15 +37,20 @@ class CoursePage extends React.Component {
             </div>
         );
     }
+    */
 
     render() {
+        const { courses } = this.props;
         return (
-            <div className='jumbotron row'>
+            <div className="container">
+                <h1>Courses</h1>
+                <CourseList courses={courses}/>
+            </div>
+        );
+        /*  for future reference
+        <div className='jumbotron row'>
                 <h1>Courses</h1>
                 {this.props.courses.map(this.courseRow)}
-                <div className='col-md-12'>
-                    <hr/>
-                </div>
                 <div className='col-md-1'>
                     <label htmlFor='courseName'>Add Course</label>
                 </div>
@@ -53,8 +63,7 @@ class CoursePage extends React.Component {
                 <div className='col-md-1'>
                     <button className='btn btn-success' onClick={this.onClickSave}>Save</button>
                 </div>
-            </div>
-        );
+            </div>*/
     }
 }
 
